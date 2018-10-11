@@ -5,28 +5,22 @@ Cnpj::Cnpj()
 
 }
 
-void Cnpj::menu()
-{
-    std::cout<<"\nDigite 1 para validar Cnpj\n";
-    std::cout<<"Digite 2 para sair\n";
-}
-
-bool Cnpj::validacnpj(std::string *x)
+bool Cnpj::validacnpj(std::string x)
 {
     unsigned int i,y,z;
 
-    if(x->length()!=14)
+    if(x.length()!=14)
     {
-        std::cout<<"\ninvalido\n";
+        std::cout<<"\nTamanho invalido\n";
         return false;
     }
     else
     {
         int vet[13]{6,5,4,3,2,9,8,7,6,5,4,3,2};
-        int aux[x->length()];
-        for(i=0;i!=x->length();i++)
+        int aux[x.length()];
+        for(i=0;i!=x.length();i++)
         {
-            std::string u=x->substr(i,1);
+            std::string u=x.substr(i,1);
             aux[i]=std::stoi(u);
         }
         int resmultip1=0;
@@ -71,11 +65,12 @@ bool Cnpj::validacnpj(std::string *x)
 
         if(resmultip1==aux[12]&&resmultip2==aux[13])
         {
-            cdcnpj=*x;
+            std::cout<<"\nvalido\n";
             return true;
         }
         else
         {
+            std::cout<<"\ninvalido\n";
             return false;
         }
     }

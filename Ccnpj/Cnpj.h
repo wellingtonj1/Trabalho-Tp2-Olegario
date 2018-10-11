@@ -4,12 +4,9 @@
 
 class Cnpj
 {
-private:
-    std::string cdcnpj;
 public:
     Cnpj();
-    void menu();
-    bool validacnpj(std::string *);
+    static bool validacnpj(std::string);
 };
 
 #endif // CNPJ_H
