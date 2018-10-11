@@ -11,19 +11,20 @@ void Cpf::menu()
     std::cout<<"Digite 2 para sair\n";
 }
 
-bool Cpf::validacpf(std::string *x)
+bool Cpf::validacpf(std::string x)
 {
     unsigned int i,d,z,y;
-    if(x->length()!=11)
+    if(x.length()!=11)
     {
+        std::cout<<"\n tamanho invalido!\n";
         return false;
     }
     else
     {
-        int aux[x->length()];
-        for(i=0;i!=x->length();i++)
+        int aux[x.length()];
+        for(i=0;i!=x.length();i++)
         {
-            std::string u=x->substr(i,1);
+            std::string u=x.substr(i,1);
             aux[i]=std::stoi(u);
         }
         int resmultip1=0;
@@ -48,10 +49,12 @@ bool Cpf::validacpf(std::string *x)
 
         if(resmultip1==aux[9]&&resmultip2==aux[10])
         {
+            std::cout<<"\nCpf valido!\n";
             return true;
         }
         else
         {
+            std::cout<<"\nCpf invalido!\n";
             return false;
         }
     }

@@ -9,7 +9,7 @@ private:
     std::string cdpessoafis;
 public:
     Cpf();
-    bool validacpf(std::string*);
+    static bool validacpf(std::string);
     void menu();
 };
 #endif // CPF_H

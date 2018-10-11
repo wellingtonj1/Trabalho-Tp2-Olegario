@@ -4,6 +4,11 @@
 
 int main()
 {
+    //std::string x;
+    //std::getline(std::cin,x);
+    Cpf::validacpf("7039107015");
+
+    /*
     Cpf p;
     std::string x;
     int escolha;
@@ -20,7 +25,7 @@ int main()
                 std::cout<<"Digite o cpf para o mesmo ser validado!\n";
                 std::cin.ignore();
                 std::getline(std::cin,x);
-                if(p.validacpf(&x))
+                if(Cpf::validacpf(&x))
                 {
                     std::cout<<"\nCpf valido!\n";
                 }
@@ -43,4 +48,5 @@ int main()
     }while(escolha!=2);
 
     return 0;
+    */
 }
